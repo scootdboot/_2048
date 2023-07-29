@@ -116,21 +116,41 @@ public class _2048
 	 */
 	public void move(String direction)
 	{
+		System.out.println("line 119: " + previousBoard[3][0]);
 		previousBoard = board;
+		System.out.println("line 121: " + previousBoard[3][0]);
 		previousScore = score;
-		// TODO fix it so that case 4 and 5 work, fun issue where there is no gap when it checks but one is created
+		// TODO fix it so that case 4 and 5 work, fun issue where there is no gap when it checks but one is created afterwards
 		// potentially merge everything and then move?
 		// MOVE EVERYTHING UNTIL IT IS NEXT TO SOMETHING AND THEN MERGE, then move
-		switch (direction)
+		switch (direction.toLowerCase())
 		{
-			case ("up") -> moveUp();
-			case ("down") -> moveDown();
-			case ("left") -> moveLeft();
-			case ("right") -> moveRight();
+			case ("up"):
+			{
+				moveUp();
+				break;
+			}
+			case ("down"):
+			{
+				moveDown();
+				break;
+			}
+			case ("left"):
+			{
+				moveLeft();
+				break;
+			}
+			case ("right"):
+			{
+				moveRight();
+				break;
+			}
 		}
+		System.out.println("line 149: " + previousBoard[3][0]);
 		generateTile();
+		System.out.println("line 151: " + previousBoard[3][0]);
 	}
-	
+
 	/**
 	 * Shifts all the tiles up, combines like tiles that collide.
 	 */
@@ -238,6 +258,7 @@ public class _2048
 				}
 			}
 		}
+		System.out.println("line 261: " + previousBoard[3][0]);
 		for (int colIterator = cols - 1; colIterator > 0; colIterator--) // will always make room for one under
 		{
 			for (int rowIterator = 0; rowIterator < board.length; rowIterator++)
@@ -250,6 +271,7 @@ public class _2048
 				}
 			}
 		}
+		System.out.println("line 274: " + previousBoard[3][0]);
 		for (int colIterator = cols - 1; colIterator > 0; colIterator--) // will always make room for one under
 		{
 			for (int rowIterator = 0; rowIterator < board.length; rowIterator++)
@@ -261,6 +283,7 @@ public class _2048
 				}
 			}
 		}
+		System.out.println("line 286: " + previousBoard[3][0]);
 	}
 	
 	/**
@@ -282,7 +305,6 @@ public class _2048
 				}
 			}
 		}
-
 		for (int colIterator = 0; colIterator < cols - 1; colIterator++) // will always make room for one over
 		{
 			for (int rowIterator = 0; rowIterator < board.length; rowIterator++)
@@ -313,6 +335,7 @@ public class _2048
 	 */
 	public void undo()
 	{
+		System.out.println("undo runs");
 		board = previousBoard;
 		score = previousScore;
 	}
