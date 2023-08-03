@@ -116,9 +116,7 @@ public class _2048
 	 */
 	public void move(String direction)
 	{
-		System.out.println("line 119: " + previousBoard[3][0]);
 		previousBoard = board;
-		System.out.println("line 121: " + previousBoard[3][0]);
 		previousScore = score;
 		// TODO fix it so that case 4 and 5 work, fun issue where there is no gap when it checks but one is created afterwards
 		// potentially merge everything and then move?
@@ -146,9 +144,7 @@ public class _2048
 				break;
 			}
 		}
-		System.out.println("line 149: " + previousBoard[3][0]);
 		generateTile();
-		System.out.println("line 151: " + previousBoard[3][0]);
 	}
 
 	/**
@@ -258,23 +254,18 @@ public class _2048
 				}
 			}
 		}
-		System.out.println("line 261: " + previousBoard[3][0]);
 		for (int colIterator = cols - 1; colIterator > 0; colIterator--) // will always make room for one under
 		{
 			for (int rowIterator = 0; rowIterator < board.length; rowIterator++)
 			{
-				System.out.println("line 266: " + previousBoard[3][0]);
-				System.out.println("rowIterator: " + rowIterator);
 				if (board[rowIterator][colIterator - 1] == board[rowIterator][colIterator])
 				{
 					score += board[rowIterator][colIterator - 1] * 2;
 					board[rowIterator][colIterator - 1] *= 2;
 					board[rowIterator][colIterator] = 0;
 				}
-				System.out.println("line 274~: " + previousBoard[3][0]);
 			}
 		}
-		System.out.println("line 276: " + previousBoard[3][0]);
 		for (int colIterator = cols - 1; colIterator > 0; colIterator--) // will always make room for one under
 		{
 			for (int rowIterator = 0; rowIterator < board.length; rowIterator++)
@@ -286,7 +277,6 @@ public class _2048
 				}
 			}
 		}
-		System.out.println("line 288: " + previousBoard[3][0]);
 	}
 	
 	/**
@@ -338,7 +328,6 @@ public class _2048
 	 */
 	public void undo()
 	{
-		System.out.println("undo runs");
 		board = previousBoard;
 		score = previousScore;
 	}

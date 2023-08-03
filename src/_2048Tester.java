@@ -5,11 +5,11 @@ public class _2048Tester
 //		case1();
 //		case2();
 //		case3();
-//		case4();
-//		case5();
+		case4();
+		case5();
 		undo();
-//		gameOverFalse();
-//		gameOverTrue();
+		gameOverFalse();
+		gameOverTrue();
 	}
 
 	private static void case1()
