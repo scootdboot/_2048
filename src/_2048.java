@@ -263,15 +263,18 @@ public class _2048
 		{
 			for (int rowIterator = 0; rowIterator < board.length; rowIterator++)
 			{
+				System.out.println("line 266: " + previousBoard[3][0]);
+				System.out.println("rowIterator: " + rowIterator);
 				if (board[rowIterator][colIterator - 1] == board[rowIterator][colIterator])
 				{
 					score += board[rowIterator][colIterator - 1] * 2;
 					board[rowIterator][colIterator - 1] *= 2;
 					board[rowIterator][colIterator] = 0;
 				}
+				System.out.println("line 274~: " + previousBoard[3][0]);
 			}
 		}
-		System.out.println("line 274: " + previousBoard[3][0]);
+		System.out.println("line 276: " + previousBoard[3][0]);
 		for (int colIterator = cols - 1; colIterator > 0; colIterator--) // will always make room for one under
 		{
 			for (int rowIterator = 0; rowIterator < board.length; rowIterator++)
@@ -283,7 +286,7 @@ public class _2048
 				}
 			}
 		}
-		System.out.println("line 286: " + previousBoard[3][0]);
+		System.out.println("line 288: " + previousBoard[3][0]);
 	}
 	
 	/**
